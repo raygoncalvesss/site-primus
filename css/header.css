@@ -6,13 +6,13 @@
 }
 
 header {
-    background-color: #0046c9;
+    background-color: #3577c2;
     padding: 1.25rem;
     display: flex; 
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    color: white;
+    color: rgb(0, 0, 0);
 }
 
 .logo img {
@@ -31,7 +31,7 @@ nav ul li {
 }
 
 nav ul li a {
-    color: white;
+    color: rgb(0, 0, 0);
     text-decoration: none;
     font-weight: bold;
     padding: 1rem;
