@@ -1,13 +1,8 @@
 footer {
-    background-image: url(../img/footer.png);
     color: #fff;
     height: 7.5rem;
     width: 100%;
     margin-top: 2rem;
-}
-.rodape a img {
-    width: 20px; 
-    margin-left: 1.25rem;
 }
 
 .site-footer {

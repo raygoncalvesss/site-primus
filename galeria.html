@@ -25,6 +25,83 @@
             </ul>
         </nav>
     </header>
+    <main>
+        <section class="Titulo-da-pagina">
+            <h2>Veja a seguir um pouco dos nossos serviços</h2>
+        </section>
+        <main class="main-content">
+        <div class="carousel-container">
+            <div class="carousel-wrapper">
+                <!-- Slides de vídeos -->
+                <div class="carousel-item">
+                    <iframe src="https://www.youtube.com/embed/ORZqxWYzdVU?si=Ivhqltw3pF_nYMiM" allowfullscreen></iframe>
+                </div>
+                <div class="carousel-item">
+                    <iframe src="https://www.youtube.com/embed/_S0CcOUOweU?si=TgW1O7y38HBIPNkW" allowfullscreen></iframe>
+                </div>
+                <div class="carousel-item">
+                    <iframe src="https://www.youtube.com/embed/zBjZyELQJ7Q?si=5CPEPInaDTpsUZg-" allowfullscreen></iframe>
+                </div>
+                <div class="carousel-item">
+                    <iframe src="https://www.youtube.com/embed/83gTJTZPNIA?si=asx8bM5qMwl4laGq" allowfullscreen></iframe>
+                </div>
+            </div>
+         
+            <!-- Botões de navegação -->
+            <button class="carousel-control carousel-control-prev" onclick="moveSlide(-1)">&#10094;</button>
+            <button class="carousel-control carousel-control-next" onclick="moveSlide(1)">&#10095;</button>
+        </div>
+        </main>
+        <!-- Link para o YouTube -->
+        <a href="https://www.youtube.com/@primussolucoes520/videos" target="_blank" class="ver-mais">Ver mais</a>
+    
+        <!-- Script JavaScript para a funcionalidade do carrossel -->
+        <script>
+            let currentIndex = 0;
+    
+            function moveSlide(step) {
+                const slides = document.querySelectorAll('.carousel-item');
+                const totalSlides = slides.length;
+    
+                // Calculando o novo índice
+                currentIndex = (currentIndex + step + totalSlides) % totalSlides;
+    
+                // Movendo o carrossel
+                const carouselWrapper = document.querySelector('.carousel-wrapper');
+                carouselWrapper.style.transform = `translateX(-${currentIndex * 100}%)`;
+            }
+        </script> 
+    </main>    
+    <script>
+        // Pega os elementos do HTML
+        const searchButton = document.getElementById('searchButton');
+        const searchInput = document.getElementById('searchInput');
+        const menuItems = document.querySelectorAll('#menu a'); // Seleciona todos os links do menu
+
+        // Adiciona evento de clique no botão de busca
+        searchButton.addEventListener('click', function() {
+            const searchTerm = searchInput.value.toLowerCase(); // Pega o valor da busca e converte para minúsculas
+
+            // Variável para armazenar se encontrou ou não
+            let found = false;
+
+            // Itera sobre os itens do menu
+            menuItems.forEach(function(item) {
+                const menuItemText = item.textContent.toLowerCase(); // Pega o texto do link e converte para minúsculas
+                
+                // Verifica se o texto do menu contém o termo de busca
+                if (menuItemText.includes(searchTerm)) {
+                    found = true; // Marca como encontrado
+                    window.location.href = item.href; // Redireciona para a página correspondente
+                }
+            });
+
+            // Se não encontrar nenhum item, mostra um alerta
+            if (!found) {
+                alert('Nenhum item encontrado');
+            }
+        });
+    </script>
     <footer>
         <div class="site-footer">
             <p class="copy-info">&copy; 2024 Primus Soluções | Todos os direitos reservados</p>
